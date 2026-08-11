@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luna Cafe — Experience the perfect blend of premium coffee, delicious bites, and cozy vibes. Made for your everyday escapes." />
+  <title>Luna Café | Sip. Savor. Stay.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'luna-black':   '#0a0a0a',
+            'luna-dark':    '#111111',
+            'luna-gold':    '#C9A96E',
+            'luna-bronze':  '#8B6A3E',
+            'luna-cream':   '#F5EDD6',
+            'luna-muted':   'rgba(255,255,255,0.60)',
+          },
+          fontFamily: {
+            serif:  ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:   ['Montserrat', 'sans-serif'],
+            body:   ['Lato', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles (Additional CSS for Elementor / WordPress Customizer) -->
+  <link rel="stylesheet" href="custom.css" />
+</head>
+<body class="bg-luna-black text-white font-body antialiased">
+
+  <!-- =====================================================================
+       ACCESSIBILITY: Skip to main content
+       ===================================================================== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =======================================================================
+       EL:SECTION  ▸  HEADER / NAVIGATION
+       Elementor: Section → Full-Width, Sticky Header, z-index 100
+       ======================================================================= -->
+  <!-- EL:SECTION -->
+  <header id="site-header" class="luna-header" role="banner">
+    <nav class="luna-nav-inner" aria-label="Main navigation">
+
+      <!-- ── Logo ───────────────────────────────────────── -->
+      <!-- EL:COLUMN -->
+      <div class="luna-logo-wrap">
+        <!-- EL:WIDGET:Image -->
+        <!-- Logo icon: inline SVG coffee cup (matches mockup) -->
+        <a href="#home" class="luna-logo-link" aria-label="Luna Café — go to homepage">
+          <svg class="luna-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M8 14h24l-3 14H11L8 14Z" stroke="#C9A96E" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M32 17h4a3 3 0 0 1 0 6h-4" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M14 10c0-2 2-3 2-5" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M20 10c0-2 2-3 2-5" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M8 30h24" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="luna-logo-text">
+            <span class="luna-logo-name">LUNÉ CAFÉ</span>
+            <span class="luna-logo-tagline">SIP. SAVOR. STAY.</span>
+          </span>
+        </a>
+      </div>
+      <!-- /EL:COLUMN -->
+
+      <!-- ── Desktop Nav Links ──────────────────────────── -->
+      <!-- EL:COLUMN -->
+      <!-- EL:WIDGET:Icon List (Nav) -->
+      <ul class="luna-nav-links" role="list">
+        <li><a href="#home"    class="luna-nav-link" >Home</a></li>
+        <li><a href="#about"   class="luna-nav-link">About</a></li>
+        <li><a href="#menu"    class="luna-nav-link">Menu</a></li>
+        <li><a href="#gallery" class="luna-nav-link">Gallery</a></li>
+        <li><a href="#blog"    class="luna-nav-link">Blog</a></li>
+        <li><a href="#contact" class="luna-nav-link">Contact</a></li>
+      </ul>
+      <!-- /EL:COLUMN -->
+
+      <!-- ── Nav Actions ────────────────────────────────── -->
+      <!-- EL:COLUMN -->
+      <div class="luna-nav-actions">
+        <!-- EL:WIDGET:Icon Box (Search icon) -->
+        <button class="luna-icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M21 21l-4.35-4.35" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <!-- EL:WIDGET:Icon Box (Account icon) -->
+        <button class="luna-icon-btn" aria-label="My account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <!-- EL:WIDGET:Button (Order Online) -->
+        <a href="#menu" class="luna-btn-outline" aria-label="Order online">Order Online</a>
+
+        <!-- Mobile hamburger (JS-only toggle) -->
+        <button class="luna-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="luna-hamburger-bar"></span>
+          <span class="luna-hamburger-bar"></span>
+          <span class="luna-hamburger-bar"></span>
+        </button>
+      </div>
+      <!-- /EL:COLUMN -->
+
+    </nav>
+
+    <!-- ── Mobile Menu ────────────────────────────────────── -->
+    <div id="mobile-menu" class="luna-mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="#home"    class="luna-mobile-link" tabindex="-1">Home</a></li>
+        <li><a href="#about"   class="luna-mobile-link" tabindex="-1">About</a></li>
+        <li><a href="#menu"    class="luna-mobile-link" tabindex="-1">Menu</a></li>
+        <li><a href="#gallery" class="luna-mobile-link" tabindex="-1">Gallery</a></li>
+        <li><a href="#blog"    class="luna-mobile-link" tabindex="-1">Blog</a></li>
+        <li><a href="#contact" class="luna-mobile-link" tabindex="-1">Contact</a></li>
+        <li><a href="#menu"    class="luna-btn-gold luna-mobile-cta" tabindex="-1">Order Online</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- /EL:SECTION -->
+
+  <!-- =======================================================================
+       MAIN CONTENT
+       ======================================================================= -->
+  <main id="main-content">
+
+    <!-- =====================================================================
+         EL:SECTION  ▸  HERO
+         Elementor: Section → Full-Height, Background Image/Overlay, No padding
+         ===================================================================== -->
+    <!-- EL:SECTION -->
+    <section id="home" class="luna-hero" aria-label="Hero — Welcome to Luna Café">
+
+      <!--
+        Photo: Unsplash — Jason Villanueva / Nathan Dumlao
+        Source: https://unsplash.com/photos/photo-1445116572660-236099ec97a0
+        Hotlinked until real brand photography is available.
+      -->
+      <div class="luna-hero-bg" aria-hidden="true">
+        <img
+          src="http://luna.local/wp-content/uploads/2026/08/hero.png"
+          alt=""
+          class="luna-hero-bg-img"
+          fetchpriority="high"
+          loading="eager"
+        />
+        <div class="luna-hero-overlay"></div>
+      </div>
+
+      <!-- ── Hero Content Grid ───────────────────────────── -->
+      <div class="luna-hero-grid">
+
+        <!-- ── LEFT COLUMN: Text + CTAs + Feature Icons ─── -->
+        <!-- EL:COLUMN -->
+        <div class="luna-hero-left">
+
+          <!-- EL:INNER-SECTION -->
+          <div class="luna-hero-content-wrap">
+
+            <!-- EL:WIDGET:Text (eyebrow label) -->
+            <p class="luna-hero-eyebrow">
+              <span class="luna-eyebrow-line" aria-hidden="true"></span>
+              Welcome to Luné Café
+            </p>
+
+            <!-- EL:WIDGET:Heading (H1) -->
+            <h1 class="luna-hero-heading">
+              Good Coffee.<br />
+              <em class="luna-heading-accent">Great Moments.</em>
+            </h1>
+
+            <!-- Decorative gold underline (animated via custom.css) -->
+            <div class="luna-heading-underline" aria-hidden="true"></div>
+
+            <!-- EL:WIDGET:Text (body copy) -->
+            <p class="luna-hero-body">
+              Experience the perfect blend of premium coffee,<br />
+              delicious bites, and cozy vibes.<br />
+              Made for your everyday escapes.
+            </p>
+
+            <!-- ── CTA Buttons ───────────────────────────── -->
+            <!-- EL:INNER-SECTION -->
+            <div class="luna-hero-ctas" role="group" aria-label="Call to action buttons">
+              <!-- EL:WIDGET:Button (primary) -->
+              <a href="#menu" class="luna-btn-gold luna-btn-hero-primary" aria-label="Explore our menu">
+                Explore Menu
+                <svg class="luna-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <!-- EL:WIDGET:Button (secondary/outline) -->
+              <a href="#contact" class="luna-btn-ghost luna-btn-hero-secondary" aria-label="Reserve a table">
+                Reserve a Table
+                <svg class="luna-btn-icon-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+              </a>
+            </div>
+            <!-- /EL:INNER-SECTION -->
+
+            <!-- ── Feature Icons Row ─────────────────────── -->
+            <!-- EL:INNER-SECTION -->
+            <div class="luna-features-row" role="list" aria-label="Our key features">
+
+              <!-- EL:WIDGET:Icon Box (Premium Coffee) -->
+              <div class="luna-feature-item" role="listitem">
+                <div class="luna-feature-icon-wrap" aria-hidden="true">
+                  <svg class="luna-feature-icon" viewBox="0 0 40 40" fill="none" stroke="#C9A96E" stroke-width="1.4">
+                    <path d="M10 18h20l-2.5 12H12.5L10 18Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30 21h3a2.5 2.5 0 0 1 0 5h-3" stroke-linecap="round"/>
+                    <path d="M15 14c0-2 1.5-2.5 1.5-4.5" stroke-linecap="round"/>
+                    <path d="M20 14c0-2 1.5-2.5 1.5-4.5" stroke-linecap="round"/>
+                    <path d="M25 14c0-2 1.5-2.5 1.5-4.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="luna-feature-text">
+                  <strong class="luna-feature-title">Premium Coffee</strong>
+                  <span class="luna-feature-desc">Finest beans,<br/>perfectly brewed.</span>
+                </div>
+              </div>
+
+              <div class="luna-feature-divider" aria-hidden="true"></div>
+
+              <!-- EL:WIDGET:Icon Box (Fresh Ingredients) -->
+              <div class="luna-feature-item" role="listitem">
+                <div class="luna-feature-icon-wrap" aria-hidden="true">
+                  <svg class="luna-feature-icon" viewBox="0 0 40 40" fill="none" stroke="#C9A96E" stroke-width="1.4">
+                    <path d="M20 34C20 34 8 26 8 16a12 12 0 0 1 24 0c0 10-12 18-12 18Z" stroke-linejoin="round"/>
+                    <path d="M20 16c0-4 3-7 6-8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="luna-feature-text">
+                  <strong class="luna-feature-title">Fresh Ingredients</strong>
+                  <span class="luna-feature-desc">Locally sourced,<br/>always fresh.</span>
+                </div>
+              </div>
+
+              <div class="luna-feature-divider" aria-hidden="true"></div>
+
+              <!-- EL:WIDGET:Icon Box (Cozy Ambience) -->
+              <div class="luna-feature-item" role="listitem">
+                <div class="luna-feature-icon-wrap" aria-hidden="true">
+                  <svg class="luna-feature-icon" viewBox="0 0 40 40" fill="none" stroke="#C9A96E" stroke-width="1.4">
+                    <rect x="6" y="18" width="10" height="8" rx="1"/>
+                    <path d="M8 26v6M14 26v6M6 22h10"/>
+                    <rect x="24" y="18" width="10" height="8" rx="1"/>
+                    <path d="M26 26v6M32 26v6M24 22h10"/>
+                    <rect x="14" y="20" width="12" height="1.5" rx="0.75"/>
+                    <path d="M17 21.5V30M23 21.5V30"/>
+                  </svg>
+                </div>
+                <div class="luna-feature-text">
+                  <strong class="luna-feature-title">Cozy Ambience</strong>
+                  <span class="luna-feature-desc">A place to relax,<br/>work or connect.</span>
+                </div>
+              </div>
+
+            </div>
+            <!-- /EL:INNER-SECTION -->
+
+          </div>
+          <!-- /EL:INNER-SECTION -->
+
+        </div>
+        <!-- /EL:COLUMN -->
+
+        <!-- ── RIGHT COLUMN: Circular Badge ──────────────── -->
+        <!-- EL:COLUMN -->
+        <div class="luna-hero-right" aria-hidden="true">
+
+          <!-- Decorative circular rotating stamp badge -->
+          <div class="luna-badge-wrap">
+            <div class="luna-badge-ring">
+              <!--
+                Badge SVG: circle path r=76, circumference≈477px
+                Text: "· GOOD COFFEE · GOOD MOOD ·" ≈ 28 chars
+                font-size=10 + letter-spacing=6.5 → ~16.5/char × 28 ≈ 462px ✓
+              -->
+              <svg class="luna-badge-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <defs>
+                  <path id="badge-arc-path"
+                    d="M 90,90
+                       m -76,0
+                       a 76,76 0 1,1 152,0
+                       a 76,76 0 1,1 -152,0"
+                  />
+                </defs>
+                <text
+                  font-family="Montserrat, sans-serif"
+                  font-size="10"
+                  font-weight="600"
+                  fill="#C9A96E"
+                  letter-spacing="6"
+                >
+                  <textPath href="#badge-arc-path" xlink:href="#badge-arc-path" startOffset="0%">
+                    · GOOD COFFEE · GOOD MOOD ·
+                  </textPath>
+                </text>
+              </svg>
+              <div class="luna-badge-center">
+                <span class="luna-badge-made">MADE</span>
+                <span class="luna-badge-with">WITH</span>
+                <span class="luna-badge-love">LOVE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /EL:COLUMN -->
+
+      </div>
+      <!-- /luna-hero-grid -->
+
+      <!-- ── Scroll Down Indicator ──────────────────────── -->
+      <!-- EL:WIDGET:Icon Box (Scroll cue) -->
+      <div class="luna-scroll-cue">
+        <button class="luna-scroll-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
+          <svg class="luna-scroll-mouse" viewBox="0 0 24 38" fill="none" stroke="#C9A96E" stroke-width="1.5" aria-hidden="true" focusable="false">
+            <rect x="1" y="1" width="22" height="36" rx="11"/>
+            <circle class="luna-scroll-dot" cx="12" cy="10" r="2" fill="#C9A96E"/>
+          </svg>
+          <span class="luna-scroll-label">SCROLL DOWN</span>
+          <svg class="luna-scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </section>
+    <!-- /EL:SECTION -->
+
+    <!-- =======================================================================
+         EL:SECTION  ▸  ABOUT TEASER
+         ======================================================================= -->
+    <!-- EL:SECTION -->
+    <section id="about" class="luna-about-teaser" aria-label="About Luna Café">
+      <div class="luna-section-inner luna-section-inner--center">
+        <!-- EL:WIDGET:Heading -->
+        <h2 class="luna-section-heading">
+          Our <em class="luna-heading-accent">Story</em>
+        </h2>
+        <!-- EL:WIDGET:Text -->
+        <p class="luna-section-body">
+          Luna Café was born from a love of honest coffee and genuine connection.
+          Every cup is crafted with precision, every bite made with care,
+          and every corner of our space designed to make you feel at home.
+        </p>
+        <!-- EL:WIDGET:Button -->
+        <a href="#menu" class="luna-btn-gold" aria-label="Discover our menu">
+          Discover Our Menu
+          <svg class="luna-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- /EL:SECTION -->
+
+    <!-- Placeholder sections for full page structure -->
+    <!-- EL:SECTION -->
+    <section id="menu"    class="luna-placeholder" aria-label="Menu section placeholder"><p>Menu — Coming Soon</p></section>
+    <!-- /EL:SECTION -->
+    <!-- EL:SECTION -->
+    <section id="gallery" class="luna-placeholder" aria-label="Gallery section placeholder"><p>Gallery — Coming Soon</p></section>
+    <!-- /EL:SECTION -->
+    <!-- EL:SECTION -->
+    <section id="blog"    class="luna-placeholder" aria-label="Blog section placeholder"><p>Blog — Coming Soon</p></section>
+    <!-- /EL:SECTION -->
+
+    <!-- =======================================================================
+         EL:SECTION  ▸  CONTACT / RESERVATION
+         Static HTML form — maps to Text Editor widget in Elementor (not Form widget)
+         ======================================================================= -->
+    <!-- EL:SECTION -->
+    <section id="contact" class="luna-contact-section" aria-label="Contact and reservations">
+      <div class="luna-section-inner">
+        <!-- EL:WIDGET:Heading -->
+        <h2 class="luna-section-heading luna-section-heading--center">
+          Reserve a <em class="luna-heading-accent">Table</em>
+        </h2>
+        <!-- EL:WIDGET:Text -->
+        <p class="luna-section-body luna-section-body--center">We'd love to have you. Book your spot below.</p>
+
+        <!--
+          NOTE FOR ELEMENTOR CONVERSION:
+          Paste this entire form block into a "Text Editor" widget (free Elementor).
+          Do NOT use Elementor Form widget — keep as static HTML per brief.
+        -->
+        <!-- EL:WIDGET:Text (static form → Text Editor widget) -->
+        <form class="luna-contact-form" aria-label="Reservation form" novalidate>
+          <div class="luna-form-row">
+            <div class="luna-form-group">
+              <label for="res-name" class="luna-form-label">Full Name</label>
+              <input type="text" id="res-name" name="name" class="luna-form-input" placeholder="Jane Smith" autocomplete="name" />
+            </div>
+            <div class="luna-form-group">
+              <label for="res-email" class="luna-form-label">Email Address</label>
+              <input type="email" id="res-email" name="email" class="luna-form-input" placeholder="jane@email.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="luna-form-row">
+            <div class="luna-form-group">
+              <label for="res-date" class="luna-form-label">Date</label>
+              <input type="date" id="res-date" name="date" class="luna-form-input" />
+            </div>
+            <div class="luna-form-group">
+              <label for="res-guests" class="luna-form-label">Number of Guests</label>
+              <select id="res-guests" name="guests" class="luna-form-input">
+                <option value="">Select…</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="luna-form-group">
+            <label for="res-message" class="luna-form-label">Special Requests</label>
+            <textarea id="res-message" name="message" class="luna-form-input luna-form-textarea" rows="4" placeholder="Any dietary requirements or special occasions?"></textarea>
+          </div>
+          <div class="luna-form-submit-wrap">
+            <button type="submit" class="luna-btn-gold luna-form-submit" aria-label="Submit reservation request">
+              Request Reservation
+            </button>
+          </div>
+        </form>
+        <!-- /EL:WIDGET:Text -->
+      </div>
+    </section>
+    <!-- /EL:SECTION -->
+
+  </main>
+
+  <!-- =======================================================================
+       EL:SECTION  ▸  FOOTER
+       ======================================================================= -->
+  <!-- EL:SECTION -->
+  <footer class="luna-footer" role="contentinfo">
+    <div class="luna-footer-inner">
+      <!-- EL:COLUMN -->
+      <div class="luna-footer-brand">
+        <div class="luna-logo-name">LUNÉ CAFÉ</div>
+        <div class="luna-logo-tagline">SIP. SAVOR. STAY.</div>
+        <p class="luna-footer-copy">© 2026 Luna Café. All rights reserved.</p>
+      </div>
+      <!-- /EL:COLUMN -->
+      <!-- EL:COLUMN -->
+      <!-- EL:WIDGET:Icon List -->
+      <nav class="luna-footer-nav" aria-label="Footer navigation">
+        <ul role="list" class="luna-footer-links">
+          <li><a href="#home"    class="luna-footer-link">Home</a></li>
+          <li><a href="#about"   class="luna-footer-link">About</a></li>
+          <li><a href="#menu"    class="luna-footer-link">Menu</a></li>
+          <li><a href="#gallery" class="luna-footer-link">Gallery</a></li>
+          <li><a href="#contact" class="luna-footer-link">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- /EL:COLUMN -->
+      <!-- EL:COLUMN -->
+      <div class="luna-footer-social">
+        <!-- EL:WIDGET:Icon Box (Instagram) -->
+        <a href="#" class="luna-social-btn" aria-label="Luna Café on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- EL:WIDGET:Icon Box (Facebook) -->
+        <a href="#" class="luna-social-btn" aria-label="Luna Café on Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <!-- EL:WIDGET:Icon Box (X / Twitter) -->
+        <a href="#" class="luna-social-btn" aria-label="Luna Café on X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.7 5.5 4.4 9 4.5-.7-3.1 1.5-6 4.5-6 1.5 0 3 .6 4 1.5L22 4z"/>
+          </svg>
+        </a>
+      </div>
+      <!-- /EL:COLUMN -->
+    </div>
+  </footer>
+  <!-- /EL:SECTION -->
+
+  <!-- Vanilla JS (no framework dependencies) -->
+  <script src="script.js"></script>
+</body>
+</html>

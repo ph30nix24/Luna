@@ -760,13 +760,292 @@ img {
 /* =========================================================================
    ABOUT TEASER SECTION
    ========================================================================= */
-.luna-about-teaser {
-  background: var(--luna-dark);
-  padding: 100px 40px;
-  border-top: 1px solid rgba(201, 169, 110, 0.12);
-  border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+/* =========================================================================
+   ABOUT SECTION — split layout (image left · content right)
+   ========================================================================= */
+
+/* ── Section wrapper: 2-col grid ───────────────────────────────────────── */
+.luna-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+  background: #0d0b09;
+  border-top: 1px solid rgba(201, 169, 110, 0.10);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.10);
+  overflow: hidden;
 }
 
+/* ── Left image column ─────────────────────────────────────────────────── */
+.luna-about-img-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.luna-about-img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.luna-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.04);
+  transition: transform 8s var(--ease-smooth);
+  display: block;
+  max-width: none;
+}
+
+.luna-about:hover .luna-about-img {
+  transform: scale(1.00);
+}
+
+/* Right-edge gradient so image bleeds softly into content panel */
+.luna-about-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(13, 11, 9, 0.10) 0%,
+    rgba(13, 11, 9, 0.55) 70%,
+    rgba(13, 11, 9, 0.95) 100%
+  );
+}
+
+/* ── Right content column ──────────────────────────────────────────────── */
+.luna-about-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 64px 72px 52px;
+  background: #0d0b09;
+  z-index: 1;
+}
+
+/* ── Decorative plant SVG (top-right) ──────────────────────────────────── */
+.luna-about-deco {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 170px;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: luna-deco-breathe 6s ease-in-out infinite;
+}
+
+@keyframes luna-deco-breathe {
+  0%, 100% { opacity: 0.7; transform: translateY(0); }
+  50%       { opacity: 0.55; transform: translateY(-4px); }
+}
+
+/* ── Eyebrow label ─────────────────────────────────────────────────────── */
+.luna-about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--luna-gold);
+  margin-bottom: 18px;
+  /* scroll-reveal start */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+}
+
+.luna-about-eyebrow.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.luna-about-eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--luna-gold);
+  flex-shrink: 0;
+}
+
+/* ── Main heading ──────────────────────────────────────────────────────── */
+.luna-about-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 4.5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--luna-white);
+  margin-bottom: 20px;
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s 0.12s var(--ease-smooth), transform 0.75s 0.12s var(--ease-smooth);
+}
+
+.luna-about-heading.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.luna-about-heading-accent {
+  font-style: italic;
+  color: var(--luna-gold);
+}
+
+/* ── Gold rule ─────────────────────────────────────────────────────────── */
+.luna-about-rule {
+  width: 44px;
+  height: 1.5px;
+  background: var(--luna-gold);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: opacity 0.6s 0.28s var(--ease-smooth), transform 0.6s 0.28s var(--ease-smooth);
+}
+
+.luna-about-rule.is-visible {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ── Body text ─────────────────────────────────────────────────────────── */
+.luna-about-body {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--luna-muted);
+  margin-bottom: 30px;
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s 0.32s var(--ease-smooth), transform 0.7s 0.32s var(--ease-smooth);
+}
+
+.luna-about-body.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── CTA text link ─────────────────────────────────────────────────────── */
+.luna-about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--luna-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.35);
+  padding-bottom: 3px;
+  margin-bottom: 52px;
+  transition: gap 0.3s var(--ease-smooth), border-color 0.3s, color 0.3s;
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s 0.42s var(--ease-smooth),
+              transform 0.7s 0.42s var(--ease-smooth),
+              gap 0.3s var(--ease-smooth),
+              border-color 0.3s,
+              color 0.3s;
+}
+
+.luna-about-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.luna-about-cta:hover {
+  gap: 16px;
+  color: var(--luna-cream);
+  border-color: var(--luna-gold);
+}
+
+.luna-about-cta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.luna-about-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Stats row ─────────────────────────────────────────────────────────── */
+.luna-about-stats {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding-top: 40px;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s 0.55s var(--ease-smooth), transform 0.8s 0.55s var(--ease-smooth);
+}
+
+.luna-about-stats.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Individual stat ───────────────────────────────────────────────────── */
+.luna-about-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.luna-about-stat-divider {
+  width: 1px;
+  height: 64px;
+  background: rgba(201, 169, 110, 0.20);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.luna-about-stat-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.luna-about-stat-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.luna-about-stat-value {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--luna-white);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.luna-about-stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.70);
+}
+
+/* ── Utility classes kept for shared use elsewhere ─────────────────────── */
 .luna-section-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -1211,8 +1490,28 @@ img {
     bottom: 24px;
   }
 
-  /* About / Contact */
-  .luna-about-teaser,
+  /* About section — stack image above content on mobile */
+  .luna-about {
+    grid-template-columns: 1fr;
+  }
+
+  .luna-about-img-col {
+    min-height: 320px;
+  }
+
+  .luna-about-content {
+    padding: 52px 28px 56px 28px;
+  }
+
+  .luna-about-deco {
+    width: 110px;
+  }
+
+  .luna-about-stats {
+    gap: 0;
+  }
+
+  /* Contact */
   .luna-contact-section {
     padding: 72px 24px;
   }

@@ -152,7 +152,7 @@
       -->
       <div class="luna-hero-bg" aria-hidden="true">
         <img
-          src="http://luna.local/wp-content/uploads/2026/08/hero.png"
+          src="./assests/hero.png"
           alt=""
           class="luna-hero-bg-img"
           fetchpriority="high"
@@ -346,29 +346,137 @@
     <!-- /EL:SECTION -->
 
     <!-- =======================================================================
-         EL:SECTION  ▸  ABOUT TEASER
+         EL:SECTION  ▸  ABOUT
+         Full-width split layout: image left · story + stats right
          ======================================================================= -->
     <!-- EL:SECTION -->
-    <section id="about" class="luna-about-teaser" aria-label="About Luna Café">
-      <div class="luna-section-inner luna-section-inner--center">
-        <!-- EL:WIDGET:Heading -->
-        <h2 class="luna-section-heading">
-          Our <em class="luna-heading-accent">Story</em>
-        </h2>
-        <!-- EL:WIDGET:Text -->
-        <p class="luna-section-body">
-          Luna Café was born from a love of honest coffee and genuine connection.
-          Every cup is crafted with precision, every bite made with care,
-          and every corner of our space designed to make you feel at home.
+    <section id="about" class="luna-about" aria-label="About Luna Café">
+
+      <!-- ── Left: Atmospheric Image ──────────────────── -->
+      <!-- EL:COLUMN -->
+      <div class="luna-about-img-col" aria-hidden="true">
+        <div class="luna-about-img-wrap">
+          <img
+            src="./assests/about-bg.png"
+            alt="Barista crafting coffee at Luna Café"
+            class="luna-about-img"
+            loading="lazy"
+          />
+          <!-- Warm gradient overlay blending into right panel -->
+          <div class="luna-about-img-overlay"></div>
+        </div>
+      </div>
+      <!-- /EL:COLUMN -->
+
+      <!-- ── Right: Story Content ──────────────────────── -->
+      <!-- EL:COLUMN -->
+      <div class="luna-about-content">
+
+        <!-- Decorative coffee-plant SVG (top-right corner) -->
+        <div class="luna-about-deco" aria-hidden="true">
+          <svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80 180 Q60 140 40 100 Q20 60 50 30 Q70 10 90 40 Q110 70 90 110 Q75 140 80 180Z"
+                  stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.35"/>
+            <path d="M80 140 Q100 120 120 90 Q140 60 120 35 Q108 18 92 30"
+                  stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.35"/>
+            <path d="M80 160 Q50 148 38 120" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.3"/>
+            <path d="M80 120 Q110 108 118 82" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.3"/>
+            <!-- Coffee beans -->
+            <ellipse cx="50" cy="168" rx="7" ry="5" transform="rotate(-30 50 168)" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M44 167 Q50 163 56 169" stroke="#C9A96E" stroke-width="0.7" fill="none" opacity="0.5"/>
+            <ellipse cx="68" cy="178" rx="7" ry="5" transform="rotate(15 68 178)" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M62 177 Q68 173 74 179" stroke="#C9A96E" stroke-width="0.7" fill="none" opacity="0.5"/>
+            <ellipse cx="58" cy="190" rx="7" ry="5" transform="rotate(-10 58 190)" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M52 189 Q58 185 64 191" stroke="#C9A96E" stroke-width="0.7" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+
+        <!-- EL:WIDGET:Text (eyebrow) -->
+        <p class="luna-about-eyebrow">
+          <span class="luna-about-eyebrow-line" aria-hidden="true"></span>
+          OUR STORY
         </p>
-        <!-- EL:WIDGET:Button -->
-        <a href="#menu" class="luna-btn-gold" aria-label="Discover our menu">
-          Discover Our Menu
-          <svg class="luna-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+
+        <!-- EL:WIDGET:Heading (H2) -->
+        <h2 class="luna-about-heading">
+          More Than<br/>
+          <em class="luna-about-heading-accent">Coffee.</em>
+        </h2>
+
+        <!-- Decorative gold rule -->
+        <div class="luna-about-rule" aria-hidden="true"></div>
+
+        <!-- EL:WIDGET:Text (body) -->
+        <p class="luna-about-body">
+          LUNE Café was born from a simple belief that great coffee brings people together and creates moments worth cherishing. What started as a small passion project has grown into a cozy space where flavor, comfort, and connection meet.
+Every cup we serve is a reflection of our love for quality, crafted with care, and inspired by the people who walk through our doors. 
+        </p>
+
+        <!-- EL:WIDGET:Button (text link) -->
+        <a href="#menu" class="luna-about-cta" aria-label="Discover our story">
+          Discover Our Story
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
             <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+
+        <!-- ── Stats Row ──────────────────────────────── -->
+        <!-- EL:INNER-SECTION -->
+        <div class="luna-about-stats" role="list" aria-label="Key facts about Luna Café">
+
+          <!-- EL:WIDGET:Icon Box (Fresh Beans) -->
+          <div class="luna-about-stat" role="listitem">
+            <div class="luna-about-stat-icon" aria-hidden="true">
+              <!-- Coffee bean icon -->
+              <svg viewBox="0 0 36 36" fill="none" stroke="#C9A96E" stroke-width="1.5">
+                <ellipse cx="18" cy="18" rx="10" ry="7" transform="rotate(-30 18 18)"/>
+                <path d="M12 14 Q18 18 24 22" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="luna-about-stat-value" data-target="100" data-suffix="%">0%</span>
+            <span class="luna-about-stat-label">FRESH BEANS</span>
+          </div>
+
+          <div class="luna-about-stat-divider" aria-hidden="true"></div>
+
+          <!-- EL:WIDGET:Icon Box (Years) -->
+          <div class="luna-about-stat" role="listitem">
+            <div class="luna-about-stat-icon" aria-hidden="true">
+              <!-- Calendar icon -->
+              <svg viewBox="0 0 36 36" fill="none" stroke="#C9A96E" stroke-width="1.5">
+                <rect x="5" y="7" width="26" height="22" rx="2"/>
+                <path d="M5 13h26M12 4v6M24 4v6"/>
+                <path d="M12 20h4M20 20h4M12 25h4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="luna-about-stat-value" data-target="5" data-suffix="+">0+</span>
+            <span class="luna-about-stat-label">YEARS</span>
+          </div>
+
+          <div class="luna-about-stat-divider" aria-hidden="true"></div>
+
+          <!-- EL:WIDGET:Icon Box (Signature Drinks) -->
+          <div class="luna-about-stat" role="listitem">
+            <div class="luna-about-stat-icon" aria-hidden="true">
+              <!-- Steam cup icon -->
+              <svg viewBox="0 0 36 36" fill="none" stroke="#C9A96E" stroke-width="1.5">
+                <path d="M12 5 Q12 2 14 5 Q14 8 16 5" stroke-linecap="round"/>
+                <path d="M18 5 Q18 2 20 5 Q20 8 22 5" stroke-linecap="round"/>
+                <path d="M8 13h20l-2 12H10L8 13Z" stroke-linejoin="round"/>
+                <path d="M28 16h2a2 2 0 0 1 0 4h-2"/>
+                <path d="M6 28h24" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="luna-about-stat-value" data-target="20" data-suffix="+">0+</span>
+            <span class="luna-about-stat-label">SIGNATURE DRINKS</span>
+          </div>
+
+        </div>
+        <!-- /EL:INNER-SECTION -->
+
       </div>
+      <!-- /EL:COLUMN -->
+
     </section>
     <!-- /EL:SECTION -->
 

@@ -32,6 +32,8 @@
     initScrollSpy();
     initReservationForm();
     initScrollReveal();
+    initAboutReveal();
+    initStatCounters();
   }
 
 
@@ -342,6 +344,85 @@
     );
 
     targets.forEach(el => observer.observe(el));
+  }
+
+
+
+  /* =========================================================================
+   * 8. ABOUT SECTION SCROLL REVEAL
+   *    Stagger `is-visible` class onto each about element as section enters view.
+   * ======================================================================= */
+  function initAboutReveal () {
+    const revealEls = qsa(
+      '.luna-about-eyebrow, .luna-about-heading, .luna-about-rule, ' +
+      '.luna-about-body, .luna-about-cta, .luna-about-stats'
+    );
+    if (!revealEls.length) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach(el => observer.observe(el));
+  }
+
+
+  /* =========================================================================
+   * 9. STAT COUNTERS — animate numbers from 0 to data-target on scroll
+   * ======================================================================= */
+  function initStatCounters () {
+    const statsSection = qs('.luna-about-stats');
+    if (!statsSection) return;
+
+    const counters = qsa('.luna-about-stat-value', statsSection);
+    let animated = false;
+
+    function animateCounters () {
+      if (animated) return;
+      animated = true;
+
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.target, 10);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 1400; // ms
+        const start = performance.now();
+
+        function step (now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // ease-out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(eased * target);
+          counter.textContent = value + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Small delay so the reveal animation fires first
+            setTimeout(animateCounters, 300);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(statsSection);
   }
 
 })();

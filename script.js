@@ -1,15 +1,15 @@
-/**
+﻿/**
  * =============================================================================
- * LUNA CAFÉ — script.js
+ * LUNA CAFÃ‰ â€” script.js
  * =============================================================================
- * Vanilla JS only — no framework dependencies.
+ * Vanilla JS only â€” no framework dependencies.
  *
  * Features:
  *  1. Sticky header background on scroll
  *  2. Mobile menu toggle (hamburger open/close)
  *  3. Mobile menu: close on link click
  *  4. Smooth-scroll for all anchor <a> links
- *  5. ScrollSpy — highlights the active nav link as sections enter view
+ *  5. ScrollSpy â€” highlights the active nav link as sections enter view
  *  6. Form: prevent default submit + show toast confirmation
  *  7. Entrance animations triggered on scroll (Intersection Observer)
  * =============================================================================
@@ -18,7 +18,7 @@
 (function () {
   'use strict';
 
-  /* ── Helpers ────────────────────────────────────────────────────────────── */
+  /* â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const qs  = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -38,7 +38,7 @@
 
 
   /* =========================================================================
-   * 1. STICKY HEADER — add `.is-scrolled` class when page scrolls > 40px
+   * 1. STICKY HEADER â€” add `.is-scrolled` class when page scrolls > 40px
    * ======================================================================= */
   function initStickyHeader () {
     const header = qs('#site-header');
@@ -129,7 +129,7 @@
 
 
   /* =========================================================================
-   * 4. SMOOTH SCROLL — intercept anchor clicks for smooth scrolling
+   * 4. SMOOTH SCROLL â€” intercept anchor clicks for smooth scrolling
    *    (CSS scroll-behavior handles most cases, but this gives more control
    *     and handles offset for the fixed header.)
    * ======================================================================= */
@@ -162,7 +162,7 @@
 
 
   /* =========================================================================
-   * 5. SCROLLSPY — highlight nav link whose section is in view
+   * 5. SCROLLSPY â€” highlight nav link whose section is in view
    * ======================================================================= */
   function initScrollSpy () {
     const sections  = qsa('main section[id]');
@@ -175,7 +175,7 @@
       10
     );
 
-    /* Map section id → nav link */
+    /* Map section id â†’ nav link */
     const linkMap = {};
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
@@ -215,7 +215,7 @@
 
 
   /* =========================================================================
-   * 6. RESERVATION FORM — prevent submit + show toast
+   * 6. RESERVATION FORM â€” prevent submit + show toast
    * ======================================================================= */
   function initReservationForm () {
     const form = qs('.luna-contact-form');
@@ -237,7 +237,7 @@
 
       // Simulate form submission
       const submitBtn = qs('.luna-form-submit', form);
-      submitBtn.textContent = 'Sending…';
+      submitBtn.textContent = 'Sendingâ€¦';
       submitBtn.disabled = true;
 
       setTimeout(() => {
@@ -305,7 +305,7 @@
 
 
   /* =========================================================================
-   * 7. SCROLL REVEAL — fade-up elements as they enter the viewport
+   * 7. SCROLL REVEAL â€” fade-up elements as they enter the viewport
    *    Adds `.luna-revealed` class to trigger CSS transitions.
    * ======================================================================= */
   function initScrollReveal () {
@@ -376,7 +376,7 @@
 
 
   /* =========================================================================
-   * 9. STAT COUNTERS — animate numbers from 0 to data-target on scroll
+   * 9. STAT COUNTERS â€” animate numbers from 0 to data-target on scroll
    * ======================================================================= */
   function initStatCounters () {
     const statsSection = qs('.luna-about-stats');
@@ -427,122 +427,108 @@
 
 
   /* =========================================================================
-   * 8. SIGNATURE MENU — Scroll-reveal + interactions
+   * 8. SIGNATURE MENU (lsm-*) â€” scroll-reveal + interactions
    * ======================================================================= */
   function initSignatureMenu () {
 
-    /* ── Scroll-reveal for [data-animate] and .luna-sig-card ── */
-    const animatedEls = qsa('[data-animate], .luna-sig-card');
-    if (!animatedEls.length) return;
+    /* â”€â”€ Scroll-reveal for .luna-reveal elements in the menu section â”€â”€ */
+    const revealEls = qsa('.lsm-section .luna-reveal');
+    if (revealEls.length) {
+      const revealObs = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealEls.forEach(el => revealObs.observe(el));
+    }
 
-    const revealObs = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
-
-    animatedEls.forEach(el => revealObs.observe(el));
-
-    /* ── Stamp tilt on mouse move ── */
-    qsa('.luna-sig-card').forEach(card => {
-      const stamp = card.querySelector('.luna-sig-stamp');
+    /* â”€â”€ Stamp spin direction follows cursor position â”€â”€ */
+    qsa('.lsm-card').forEach(card => {
+      const stamp = card.querySelector('.lsm-stamp');
       if (!stamp) return;
 
       card.addEventListener('mousemove', e => {
-        const rect  = card.getBoundingClientRect();
-        const cx    = rect.left + rect.width  / 2;
-        const cy    = rect.top  + rect.height / 2;
-        const dx    = (e.clientX - cx) / (rect.width  / 2);
-        const dy    = (e.clientY - cy) / (rect.height / 2);
-        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-        stamp.style.transform = `rotate(${angle * 0.15 + 6}deg) scale(1.06)`;
+        const r  = card.getBoundingClientRect();
+        const cx = r.left + r.width  / 2;
+        const cy = r.top  + r.height / 2;
+        const dx = (e.clientX - cx) / (r.width  / 2);
+        const dy = (e.clientY - cy) / (r.height / 2);
+        const deg = Math.atan2(dy, dx) * (180 / Math.PI);
+        // small extra tilt on top of the CSS hover transform
+        stamp.style.setProperty('--stamp-cursor-deg', `${deg * 0.1}deg`);
       });
 
       card.addEventListener('mouseleave', () => {
-        stamp.style.transform = '';
+        stamp.style.removeProperty('--stamp-cursor-deg');
       });
     });
 
-    /* ── Ripple on Order Now buttons ── */
-    qsa('.luna-sig-order-btn').forEach(btn => {
+    /* â”€â”€ Ripple on CTA buttons â”€â”€ */
+    qsa('.lsm-section .lsm-card-cta').forEach(btn => {
       btn.addEventListener('click', function (e) {
-        // Remove any existing ripple
-        const old = this.querySelector('.sig-ripple');
+        const old = this.querySelector('.lsm-ripple');
         if (old) old.remove();
 
-        const ripple = document.createElement('span');
-        ripple.className = 'sig-ripple';
-        const rect   = this.getBoundingClientRect();
-        const size   = Math.max(rect.width, rect.height) * 2;
-        const x      = e.clientX - rect.left - size / 2;
-        const y      = e.clientY - rect.top  - size / 2;
+        const rpl  = document.createElement('span');
+        rpl.className = 'lsm-ripple';
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 2.2;
 
-        Object.assign(ripple.style, {
-          position:     'absolute',
-          width:        size + 'px',
-          height:       size + 'px',
-          left:         x + 'px',
-          top:          y + 'px',
-          borderRadius: '50%',
-          background:   'rgba(255,255,255,0.25)',
-          transform:    'scale(0)',
-          animation:    'sig-ripple-anim 0.55s ease-out forwards',
-          pointerEvents:'none',
+        Object.assign(rpl.style, {
+          position:      'absolute',
+          width:         `${size}px`,
+          height:        `${size}px`,
+          left:          `${e.clientX - rect.left - size / 2}px`,
+          top:           `${e.clientY - rect.top  - size / 2}px`,
+          borderRadius:  '50%',
+          background:    'rgba(255,255,255,0.18)',
+          transform:     'scale(0)',
+          pointerEvents: 'none',
+          animation:     'lsm-ripple-kf 0.55s ease-out forwards',
         });
 
-        // Ensure the button is positioned relative
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
+        this.appendChild(rpl);
+        setTimeout(() => rpl.remove(), 600);
       });
     });
 
     /* Inject ripple keyframe once */
-    if (!document.getElementById('sig-ripple-style')) {
-      const style = document.createElement('style');
-      style.id = 'sig-ripple-style';
-      style.textContent = `
-        @keyframes sig-ripple-anim {
-          to { transform: scale(1); opacity: 0; }
-        }
-      `;
-      document.head.appendChild(style);
+    if (!document.getElementById('lsm-ripple-style')) {
+      const s = document.createElement('style');
+      s.id = 'lsm-ripple-style';
+      s.textContent = '@keyframes lsm-ripple-kf { to { transform:scale(1); opacity:0; } }';
+      document.head.appendChild(s);
     }
 
-    /* ── Parallax: food images shift subtly on scroll ── */
+    /* â”€â”€ Background glow slow parallax on scroll â”€â”€ */
     const section = qs('#menu');
     if (!section) return;
 
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const rect    = section.getBoundingClientRect();
-        const vHeight = window.innerHeight;
-        // progress: 0 (bottom of viewport) → 1 (top of viewport)
-        const progress = 1 - (rect.top / vHeight);
+    const glowA = section.querySelector('.lsm-bg-glow--a');
+    const glowB = section.querySelector('.lsm-bg-glow--b');
 
-        if (progress > 0 && progress < 2) {
-          const shift = (progress - 0.5) * 18; // ±9px range
-          qsa('.luna-sig-food-img-wrap', section).forEach(wrap => {
-            wrap.style.transform = `translateY(${-shift * 0.5}px)`;
-          });
+    let rp = false;
+    window.addEventListener('scroll', () => {
+      if (rp) return;
+      rp = true;
+      requestAnimationFrame(() => {
+        const pct = 1 - section.getBoundingClientRect().top / window.innerHeight;
+        if (pct > -0.5 && pct < 2) {
+          const shift = (pct - 0.5) * 16;
+          if (glowA) glowA.style.transform = `translate(${-shift}px, ${shift * 0.5}px)`;
+          if (glowB) glowB.style.transform = `translate(${shift}px, ${-shift * 0.4}px)`;
         }
-        ticking = false;
+        rp = false;
       });
     }, { passive: true });
   }
 
-  /* Hook into init */
   document.addEventListener('DOMContentLoaded', initSignatureMenu);
 
 })();

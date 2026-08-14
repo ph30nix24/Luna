@@ -1,12 +1,12 @@
 /*
  * =========================================================================
- * LUNA CAFÉ — custom.css
+ * LUNA CAFÃ‰ â€” custom.css
  * =========================================================================
  * Purpose : All non-Tailwind-expressible styling:
  *           decorative shapes, complex animations, hover states, custom
  *           component patterns, and layout details.
  *
- * Usage   : Paste entire file into WordPress Customizer → Additional CSS
+ * Usage   : Paste entire file into WordPress Customizer â†’ Additional CSS
  *           OR link as a standalone stylesheet.
  *
  * Design system extracted from mockup:
@@ -18,7 +18,7 @@
  * =========================================================================
  */
 
-/* ── CSS Custom Properties ─────────────────────────────────────────────── */
+/* â”€â”€ CSS Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --luna-black:    #0a0a0a;
   --luna-dark:     #111111;
@@ -38,7 +38,7 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Reset / Base ──────────────────────────────────────────────────────── */
+/* â”€â”€ Reset / Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *,
 *::before,
 *::after {
@@ -65,7 +65,7 @@ img {
   max-width: 100%;
 }
 
-/* ── Accessibility: Skip Link ──────────────────────────────────────────── */
+/* â”€â”€ Accessibility: Skip Link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -86,7 +86,7 @@ img {
   top: 0;
 }
 
-/* ── Focus States (accessibility) ──────────────────────────────────────── */
+/* â”€â”€ Focus States (accessibility) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :focus-visible {
   outline: 2px solid var(--luna-gold);
   outline-offset: 3px;
@@ -110,7 +110,7 @@ img {
               box-shadow 0.4s var(--ease-smooth);
 }
 
-/* Scrolled state — JS adds this class */
+/* Scrolled state â€” JS adds this class */
 .luna-header.is-scrolled {
   background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(16px) saturate(180%);
@@ -130,7 +130,7 @@ img {
   gap: 16px;
 }
 
-/* ── Logo ─────────────────────────────────────────────────────────────── */
+/* â”€â”€ Logo â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-logo-wrap {
   flex-shrink: 0;
 }
@@ -176,7 +176,7 @@ img {
   margin-top: 3px;
 }
 
-/* ── Nav Links ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Nav Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-nav-links {
   display: flex;
   align-items: center;
@@ -220,7 +220,7 @@ img {
   right: 0;
 }
 
-/* ── Nav Actions ───────────────────────────────────────────────────────── */
+/* â”€â”€ Nav Actions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-nav-actions {
   display: flex;
   align-items: center;
@@ -389,7 +389,7 @@ img {
   overflow: hidden;
 }
 
-/* ── Background image + overlay ─────────────────────────────────────────── */
+/* â”€â”€ Background image + overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-bg {
   position: absolute;
   inset: 0;
@@ -431,7 +431,7 @@ img {
     );
 }
 
-/* ── Hero content grid ──────────────────────────────────────────────────── */
+/* â”€â”€ Hero content grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-grid {
   position: relative;
   z-index: 1;
@@ -447,7 +447,7 @@ img {
   gap: 40px;
 }
 
-/* ── Left column ────────────────────────────────────────────────────────── */
+/* â”€â”€ Left column â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-left {
   display: flex;
   flex-direction: column;
@@ -473,7 +473,7 @@ img {
   }
 }
 
-/* ── Eyebrow ────────────────────────────────────────────────────────────── */
+/* â”€â”€ Eyebrow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-eyebrow {
   display: flex;
   align-items: center;
@@ -495,7 +495,7 @@ img {
   flex-shrink: 0;
 }
 
-/* ── Hero Heading (H1) ──────────────────────────────────────────────────── */
+/* â”€â”€ Hero Heading (H1) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-heading {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 5.5vw, 5.5rem);
@@ -526,7 +526,7 @@ img {
   to { width: 80px; }
 }
 
-/* ── Hero Body ──────────────────────────────────────────────────────────── */
+/* â”€â”€ Hero Body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -537,7 +537,7 @@ img {
   animation: luna-fade-up 0.9s 0.4s var(--ease-smooth) both;
 }
 
-/* ── CTA Buttons row ────────────────────────────────────────────────────── */
+/* â”€â”€ CTA Buttons row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-ctas {
   display: flex;
   align-items: center;
@@ -558,7 +558,7 @@ img {
   padding: 15px 32px;
 }
 
-/* ── Feature Icons Row ──────────────────────────────────────────────────── */
+/* â”€â”€ Feature Icons Row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-features-row {
   display: flex;
   align-items: flex-start;
@@ -618,7 +618,7 @@ img {
   display: block;
 }
 
-/* ── Right column (badge only on large screens) ─────────────────────────── */
+/* â”€â”€ Right column (badge only on large screens) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-hero-right {
   display: flex;
   align-items: center;
@@ -626,7 +626,7 @@ img {
   animation: luna-fade-up 0.9s 0.35s var(--ease-smooth) both;
 }
 
-/* ── Circular Rotating Badge ────────────────────────────────────────────── */
+/* â”€â”€ Circular Rotating Badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-badge-wrap {
   position: relative;
   width: 180px;
@@ -693,7 +693,7 @@ img {
   font-weight: 700;
 }
 
-/* ── Scroll Cue ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Scroll Cue â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-scroll-cue {
   position: absolute;
   bottom: 36px;
@@ -761,10 +761,10 @@ img {
    ABOUT TEASER SECTION
    ========================================================================= */
 /* =========================================================================
-   ABOUT SECTION — split layout (image left · content right)
+   ABOUT SECTION â€” split layout (image left Â· content right)
    ========================================================================= */
 
-/* ── Section wrapper: 2-col grid ───────────────────────────────────────── */
+/* â”€â”€ Section wrapper: 2-col grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about {
   display: flex;
   flex-direction: row;
@@ -778,7 +778,7 @@ img {
   overflow: hidden;
 }
 
-/* ── Left image column ─────────────────────────────────────────────────── */
+/* â”€â”€ Left image column â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-img-col {
   position: relative;
   width: 50%;
@@ -819,7 +819,7 @@ img {
   );
 }
 
-/* ── Right content column ──────────────────────────────────────────────── */
+/* â”€â”€ Right content column â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-content {
   width: 50%;
   position: relative;
@@ -831,7 +831,7 @@ img {
   z-index: 1;
 }
 
-/* ── Decorative plant SVG (top-right) ──────────────────────────────────── */
+/* â”€â”€ Decorative plant SVG (top-right) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-deco {
   position: absolute;
   top: -10px;
@@ -847,7 +847,7 @@ img {
   50%       { opacity: 0.55; transform: translateY(-4px); }
 }
 
-/* ── Eyebrow label ─────────────────────────────────────────────────────── */
+/* â”€â”€ Eyebrow label â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-eyebrow {
   display: flex;
   align-items: center;
@@ -878,7 +878,7 @@ img {
   flex-shrink: 0;
 }
 
-/* ── Main heading ──────────────────────────────────────────────────────── */
+/* â”€â”€ Main heading â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-heading {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 4.5vw, 5.2rem);
@@ -902,7 +902,7 @@ img {
   color: var(--luna-gold);
 }
 
-/* ── Gold rule ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Gold rule â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-rule {
   width: 44px;
   height: 1.5px;
@@ -919,7 +919,7 @@ img {
   transform: scaleX(1);
 }
 
-/* ── Body text ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Body text â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-body {
   font-family: var(--font-body);
   font-size: 1.02rem;
@@ -938,7 +938,7 @@ img {
   transform: translateY(0);
 }
 
-/* ── CTA text link ─────────────────────────────────────────────────────── */
+/* â”€â”€ CTA text link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-cta {
   display: inline-flex;
   width: fit-content;
@@ -986,7 +986,7 @@ img {
   transform: translateX(4px);
 }
 
-/* ── Stats row ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Stats row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-stats {
   display: flex;
   align-items: flex-start;
@@ -1003,7 +1003,7 @@ img {
   transform: translateY(0);
 }
 
-/* ── Individual stat ───────────────────────────────────────────────────── */
+/* â”€â”€ Individual stat â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-about-stat {
   flex: 1;
   display: flex;
@@ -1051,7 +1051,7 @@ img {
   color: rgba(201, 169, 110, 0.70);
 }
 
-/* ── Utility classes kept for shared use elsewhere ─────────────────────── */
+/* â”€â”€ Utility classes kept for shared use elsewhere â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .luna-section-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -1330,7 +1330,7 @@ img {
   transform-origin: center;
 }
 
-/* Active state — JS adds .is-open to hamburger */
+/* Active state â€” JS adds .is-open to hamburger */
 .luna-hamburger.is-open .luna-hamburger-bar:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
@@ -1346,7 +1346,7 @@ img {
 
 .luna-mobile-menu {
   position: fixed;
-  top: 88px; /* explicit px — no CSS variable dependency */
+  top: 88px; /* explicit px â€” no CSS variable dependency */
   left: 0;
   right: 0;
   background: rgba(8, 8, 8, 0.97);
@@ -1406,7 +1406,7 @@ img {
 
 
 /* =========================================================================
-   SCROLL-SPY — active nav link highlight
+   SCROLL-SPY â€” active nav link highlight
    ========================================================================= */
 .luna-nav-link.is-active {
   color: var(--luna-white);
@@ -1418,7 +1418,7 @@ img {
 
 
 /* =========================================================================
-   RESPONSIVE — Tablet
+   RESPONSIVE â€” Tablet
    ========================================================================= */
 @media (max-width: 1024px) {
   .luna-nav-inner {
@@ -1442,7 +1442,7 @@ img {
 
 
 /* =========================================================================
-   RESPONSIVE — Mobile (≤ 768px)
+   RESPONSIVE â€” Mobile (â‰¤ 768px)
    ========================================================================= */
 @media (max-width: 768px) {
   :root {
@@ -1496,7 +1496,7 @@ img {
     bottom: 24px;
   }
 
-  /* About section — stack image above content on mobile */
+  /* About section â€” stack image above content on mobile */
   .luna-about {
     grid-template-columns: 1fr;
   }
@@ -1553,7 +1553,7 @@ img {
 
 
 /* =========================================================================
-   RESPONSIVE — Small mobile (≤ 480px)
+   RESPONSIVE â€” Small mobile (â‰¤ 480px)
    ========================================================================= */
 @media (max-width: 480px) {
   .luna-hero-ctas {
@@ -1595,295 +1595,321 @@ img {
 
 
 /* =========================================================================
-   SIGNATURE MENU SECTION
+   SIGNATURE MENU  (lsm-*)
+   Built on Luna design tokens — mirrors Hero + About section patterns
    ========================================================================= */
 
-/* ── Section wrapper ─────────────────────────────────────────────────────── */
-.luna-sig-section {
+/* ── Utility: scroll-reveal (luna-reveal) ─────────────────────────────────
+   Same pattern used by About stats, hero content, etc.                     */
+.luna-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity  0.85s var(--ease-smooth),
+    transform 0.85s var(--ease-smooth);
+  transition-delay: var(--luna-reveal-delay, 0s);
+}
+
+.luna-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold underline that expands on scroll — mirrors luna-heading-underline */
+.luna-rule-expand {
+  width: 0;
+  transition: width 1.1s var(--ease-smooth);
+}
+
+.luna-reveal.is-visible .luna-rule-expand,
+.is-visible .luna-rule-expand {
+  width: 88px;
+}
+
+/* ── Section ──────────────────────────────────────────────────────────────── */
+.lsm-section {
   position: relative;
-  background: var(--luna-black);
-  padding: 100px 0 80px;
+  background: var(--luna-dark);    /* #111111 — same as site body sections */
+  padding: 110px 0 100px;
   overflow: hidden;
 }
 
-/* ── Background decorations ──────────────────────────────────────────────── */
-.luna-sig-bg-deco {
+/* ── Background layer ────────────────────────────────────────────────────── */
+.lsm-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
 }
 
-.luna-sig-grain {
+/* Soft ambient glows — consistent with hero/about glows */
+.lsm-bg-glow {
   position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
-
-.luna-sig-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.06;
+  filter: blur(100px);
+  pointer-events: none;
 }
 
-.luna-sig-glow--left {
-  background: var(--luna-gold);
-  top: -200px;
-  left: -200px;
+.lsm-bg-glow--a {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(201,169,110,0.09) 0%, transparent 70%);
+  top: -80px;
+  left: -120px;
+  animation: lsm-glow-drift 10s ease-in-out infinite;
 }
 
-.luna-sig-glow--right {
-  background: var(--luna-bronze);
-  bottom: -200px;
-  right: -200px;
+.lsm-bg-glow--b {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139,106,62,0.07) 0%, transparent 70%);
+  bottom: -60px;
+  right: 5%;
+  animation: lsm-glow-drift 14s ease-in-out infinite reverse;
 }
 
-/* Floating coffee beans */
-.luna-sig-bean {
-  position: absolute;
-  width: 60px;
-  animation: sig-bean-float 8s ease-in-out infinite;
+@keyframes lsm-glow-drift {
+  0%, 100% { transform: translate(0, 0);       }
+  50%       { transform: translate(24px, -18px); }
 }
 
-.luna-sig-bean--1 {
-  top: 8%;
-  left: 5%;
-  width: 50px;
-  animation-duration: 7s;
-  animation-delay: 0s;
-}
-
-.luna-sig-bean--2 {
-  top: 65%;
-  right: 6%;
-  width: 40px;
-  animation-duration: 9s;
-  animation-delay: -3s;
-}
-
-.luna-sig-bean--3 {
-  bottom: 10%;
-  left: 20%;
-  width: 35px;
-  animation-duration: 6s;
-  animation-delay: -5s;
-}
-
-@keyframes sig-bean-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33%       { transform: translateY(-14px) rotate(8deg); }
-  66%       { transform: translateY(8px) rotate(-5deg); }
-}
-
-.luna-sig-plant {
+/* Coffee-plant SVG — exact match to luna-about-deco position/style */
+.lsm-bg-plant {
   position: absolute;
   right: 0;
   top: 0;
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 280px;
   opacity: 1;
+  pointer-events: none;
+}
+
+/* ── Inner wrapper ────────────────────────────────────────────────────────── */
+.lsm-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
 /* ── Section header ──────────────────────────────────────────────────────── */
-.luna-sig-header {
-  position: relative;
-  z-index: 1;
+.lsm-header {
   text-align: center;
-  padding: 0 24px 64px;
+  margin-bottom: 72px;
 }
 
-.luna-sig-eyebrow-wrap {
+/* Eyebrow — identical atoms to luna-about-eyebrow */
+.lsm-eyebrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-
-.luna-sig-eyebrow-line {
-  display: block;
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--luna-gold), transparent);
-  flex-shrink: 0;
-}
-
-.luna-sig-eyebrow-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.luna-sig-eyebrow-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.luna-sig-eyebrow-text {
+  gap: 10px;
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.35em;
   color: var(--luna-gold);
-  white-space: nowrap;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
-.luna-sig-heading {
+.lsm-eyebrow-line {
+  display: block;
+  flex: 0 0 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--luna-gold) 60%, transparent);
+}
+
+/* Heading — Cormorant Garamond, mirrors luna-about-heading sizing */
+.lsm-heading {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
   font-weight: 700;
   color: var(--luna-white);
   line-height: 1.1;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
-.luna-sig-heading-italic {
+.lsm-heading-em {
   font-style: italic;
   color: var(--luna-gold);
   font-weight: 400;
 }
 
-.luna-sig-subheading {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--luna-muted);
-  letter-spacing: 0.03em;
-  margin-bottom: 24px;
-}
-
-.luna-sig-heading-rule {
-  width: 0;
+/* Gold rule — mirrors .luna-heading-underline */
+.lsm-heading-rule {
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--luna-gold), transparent);
-  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--luna-gold) 50%, transparent);
+  margin: 0 auto 20px;
   border-radius: 2px;
-  transition: width 1.2s var(--ease-smooth);
 }
 
-.luna-sig-header.is-visible .luna-sig-heading-rule {
-  width: 120px;
+.lsm-subheading {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--luna-muted);
+  letter-spacing: 0.04em;
 }
 
-/* ── Cards container ─────────────────────────────────────────────────────── */
-.luna-sig-cards {
-  position: relative;
-  z-index: 1;
+/* ── Cards stack ─────────────────────────────────────────────────────────── */
+.lsm-cards {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
+  gap: 24px;
 }
 
 /* ── Individual card ─────────────────────────────────────────────────────── */
-.luna-sig-card {
+.lsm-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.45s var(--ease-spring), box-shadow 0.45s var(--ease-smooth);
-  will-change: transform;
-}
-
-.luna-sig-card:hover {
-  transform: translateY(-6px) scale(1.008);
-}
-
-.luna-sig-card--light {
-  background: #EDE0C4;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3);
-}
-
-.luna-sig-card--light:hover {
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.4);
-}
-
-.luna-sig-card--dark {
-  background: #1C1410;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.luna-sig-card--dark:hover {
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 4px 16px rgba(201,169,110,0.12);
-}
-
-/* Card inner: flex row */
-.luna-sig-card-inner {
-  position: relative;
+  min-height: 210px;
   display: flex;
   align-items: stretch;
-  min-height: 220px;
+  transition:
+    transform 0.4s var(--ease-spring),
+    box-shadow 0.4s var(--ease-smooth);
 }
 
-/* Card texture overlay */
-.luna-sig-card-texture {
+.lsm-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card 01 — creamy/linen  */
+.lsm-card--light {
+  background: #E8D9BC;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.40);
+}
+
+.lsm-card--light:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(139,106,62,0.2);
+}
+
+/* Card 02 — deep dark  */
+.lsm-card--dark {
+  background: #1A120C;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.60);
+}
+
+.lsm-card--dark:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.75), 0 0 0 1px rgba(201,169,110,0.18);
+}
+
+/* ── Card background (texture + floral) ─────────────────────────────────── */
+.lsm-card-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
 }
 
-.luna-sig-card--light .luna-sig-card-texture {
-  background:
-    radial-gradient(ellipse at 60% 50%, rgba(255,255,255,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse at 20% 80%, rgba(139,106,62,0.08) 0%, transparent 60%);
-}
-
-.luna-sig-card--dark .luna-sig-card-texture {
-  background:
-    radial-gradient(ellipse at 40% 50%, rgba(201,169,110,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse at 80% 20%, rgba(139,106,62,0.08) 0%, transparent 60%);
-}
-
-/* Decorative floral sketch */
-.luna-sig-card-floral {
+.lsm-card-floral {
   position: absolute;
-  right: 350px;
-  top: -20px;
-  width: 180px;
-  height: 180px;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.8;
+  width: 220px;
+  height: 260px;
+  right: 340px;
+  top: -24px;
+  opacity: 0.9;
 }
 
-.luna-sig-card-floral--right {
+.lsm-card-floral--right {
   right: auto;
-  left: 350px;
+  left: 340px;
 }
 
-.luna-sig-card-floral svg {
+/* ── Food image ──────────────────────────────────────────────────────────── */
+.lsm-card-img-wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 46%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.lsm-card-img-wrap--left {
+  right: auto;
+  left: 0;
+}
+
+.lsm-card-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  max-width: none;
+  transition: transform 0.7s var(--ease-smooth);
 }
 
-/* ── Card text content ───────────────────────────────────────────────────── */
-.luna-sig-card-content {
-  position: relative;
+.lsm-card:hover .lsm-card-img {
+  transform: scale(1.05);
+}
+
+/* Gradient fade blending image into card */
+.lsm-card-img-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lsm-card-img-fade--left {
+  background: linear-gradient(to right, #E8D9BC 0%, rgba(232,217,188,0.6) 30%, transparent 100%);
+}
+
+.lsm-card--dark .lsm-card-img-fade--left {
+  background: none;
+}
+
+.lsm-card-img-fade--right {
+  background: linear-gradient(to left, #1A120C 0%, rgba(26,18,12,0.65) 35%, transparent 100%);
+}
+
+/* ── Best value tag ──────────────────────────────────────────────────────── */
+.lsm-best-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
   z-index: 3;
-  flex: 0 0 auto;
-  padding: 36px 28px 36px 44px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--luna-gold);
+  color: var(--luna-black);
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(201,169,110,0.35);
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.lsm-card:hover .lsm-best-tag {
+  transform: scale(1.06);
+}
+
+/* ── Card body (text panel) ──────────────────────────────────────────────── */
+.lsm-card-body {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
-  min-width: 260px;
-  max-width: 310px;
+  gap: 13px;
+  padding: 36px 36px 36px 44px;
+  max-width: 54%;
 }
 
-.luna-sig-card-content--right {
-  padding: 36px 44px 36px 28px;
+.lsm-card-body--right {
+  padding: 36px 44px 36px 36px;
   margin-left: auto;
-  align-items: flex-start;
 }
 
-/* Number badge */
-.luna-sig-number {
+/* Number badge — matches luna-badge visual language */
+.lsm-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1893,492 +1919,345 @@ img {
   background: #8B6A3E;
   color: #fff;
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  line-height: 1;
-  transition: transform 0.35s var(--ease-spring), background 0.3s;
+  transition: transform 0.35s var(--ease-spring);
+  flex-shrink: 0;
 }
 
-.luna-sig-card:hover .luna-sig-number {
-  transform: scale(1.15) rotate(-5deg);
+.lsm-card:hover .lsm-num {
+  transform: rotate(-8deg) scale(1.12);
 }
 
-.luna-sig-number--gold {
+.lsm-num--gold {
   background: var(--luna-gold);
   color: var(--luna-black);
 }
 
-/* Item title */
-.luna-sig-item-title {
+/* Card title — Montserrat black, matches reference image style */
+.lsm-card-title {
   font-family: var(--font-sans);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.9rem, 3.5vw, 2.7rem);
   font-weight: 800;
-  line-height: 1.05;
-  color: #1C1410;
+  line-height: 1.0;
   letter-spacing: -0.01em;
-  transition: letter-spacing 0.4s var(--ease-smooth);
+  color: #1A120C;
+  transition: letter-spacing 0.35s var(--ease-smooth);
 }
 
-.luna-sig-card:hover .luna-sig-item-title {
+.lsm-card:hover .lsm-card-title {
   letter-spacing: 0.01em;
 }
 
-.luna-sig-item-title--light {
-  color: #EDE0C4;
+.lsm-card-title--light {
+  color: var(--luna-cream);
 }
 
-/* Item list */
-.luna-sig-item-list {
+/* Included-items list */
+.lsm-card-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.luna-sig-item-list li {
+.lsm-card-list li {
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-body);
   font-size: 0.82rem;
-  color: #5C3D1E;
-  letter-spacing: 0.01em;
+  color: rgba(26,18,12,0.75);
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateX(-8px);
   transition: opacity 0.4s ease, transform 0.4s var(--ease-smooth);
 }
 
-.luna-sig-item-list--light li {
-  color: rgba(237, 224, 196, 0.75);
+.lsm-card-list li span {
+  opacity: 0.6;
+  font-size: 0.76rem;
 }
 
-.luna-sig-card.is-visible .luna-sig-item-list li:nth-child(1) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.1s;
+.lsm-card-list--light li {
+  color: rgba(245,237,214,0.78);
 }
 
-.luna-sig-card.is-visible .luna-sig-item-list li:nth-child(2) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
-}
+.lsm-card.is-visible .lsm-card-list li:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.18s; }
+.lsm-card.is-visible .lsm-card-list li:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 0.28s; }
+.lsm-card.is-visible .lsm-card-list li:nth-child(3) { opacity: 1; transform: translateX(0); transition-delay: 0.38s; }
 
-.luna-sig-card.is-visible .luna-sig-item-list li:nth-child(3) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.3s;
-}
-
-.luna-sig-list-dot {
-  width: 7px;
-  height: 7px;
-  flex-shrink: 0;
-}
-
-/* Order button */
-.luna-sig-order-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  border-radius: 40px;
-  border: none;
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s, background 0.3s;
+/* CTA — re-uses luna-btn-ghost / luna-btn-gold, just adds the gap + icon */
+.lsm-card-cta {
+  align-self: flex-start;
   margin-top: 4px;
 }
 
-.luna-sig-order-btn svg {
-  width: 14px;
-  height: 14px;
+.lsm-card-cta svg {
+  width: 15px;
+  height: 15px;
   transition: transform 0.3s var(--ease-spring);
 }
 
-.luna-sig-order-btn:hover svg {
+.lsm-card-cta:hover svg {
   transform: translateX(4px);
 }
 
-.luna-sig-order-btn--dark {
-  background: #1C1410;
-  color: #EDE0C4;
-  box-shadow: 0 4px 16px rgba(28,20,16,0.25);
-}
-
-.luna-sig-order-btn--dark:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(28,20,16,0.4);
-  background: #2A1E14;
-}
-
-.luna-sig-order-btn--gold {
-  background: var(--luna-gold);
-  color: var(--luna-black);
-  box-shadow: 0 4px 20px rgba(201,169,110,0.3);
-}
-
-.luna-sig-order-btn--gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201,169,110,0.5);
-  background: #d4b47a;
-}
-
 /* ── Price stamp ─────────────────────────────────────────────────────────── */
-.luna-sig-stamp {
-  position: relative;
+.lsm-stamp {
+  position: absolute;
   z-index: 3;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  width: 110px;
-  height: 110px;
+  /* horizontally centred between text and image */
+  right: 45%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
-  transition: transform 0.4s var(--ease-spring);
+  border: 2px dashed rgba(139,106,62,0.55);
+  background: rgba(26,18,12,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s var(--ease-spring);
 }
 
-.luna-sig-card:hover .luna-sig-stamp {
-  transform: rotate(12deg) scale(1.08);
+.lsm-card:hover .lsm-stamp {
+  transform: translateY(-50%) rotate(14deg) scale(1.08);
 }
 
-.luna-sig-stamp--dark {
-  border: 2px dashed rgba(139,106,62,0.5);
-  background: rgba(28,20,16,0.08);
+/* Dark card stamp — gold dashed ring */
+.lsm-stamp--gold {
+  border-color: rgba(201,169,110,0.55);
+  background: rgba(201,169,110,0.04);
+  /* on dark card stamp sits in left area (between left image and right text) */
+  right: auto;
+  left: 45%;
 }
 
-.luna-sig-stamp--light {
-  border: 2px dashed rgba(201,169,110,0.5);
-  background: rgba(237,224,196,0.06);
-}
-
-.luna-sig-stamp-inner {
+.lsm-stamp-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 1px;
   text-align: center;
 }
 
-.luna-sig-stamp-icon {
-  width: 16px;
-  height: 16px;
-  margin-bottom: 2px;
-}
-
-.luna-sig-stamp-only {
+.lsm-stamp-only {
   font-family: var(--font-sans);
-  font-size: 0.55rem;
+  font-size: 0.52rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   color: #8B6A3E;
-}
-
-.luna-sig-stamp--light .luna-sig-stamp-only {
-  color: var(--luna-gold);
-}
-
-.luna-sig-stamp-price {
-  font-family: var(--font-sans);
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1;
-  color: #1C1410;
-  letter-spacing: -0.02em;
-}
-
-.luna-sig-stamp--light .luna-sig-stamp-price {
-  color: var(--luna-gold);
-}
-
-.luna-sig-stamp-stars {
-  font-size: 0.5rem;
-  color: #8B6A3E;
-  letter-spacing: 0.15em;
-  margin-top: 1px;
-}
-
-.luna-sig-stamp--light .luna-sig-stamp-stars {
-  color: var(--luna-gold);
-}
-
-/* ── Food image ──────────────────────────────────────────────────────────── */
-.luna-sig-food-img-wrap {
-  position: absolute;
-  right: -20px;
-  bottom: -10px;
-  width: 380px;
-  height: 270px;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: 12px 0 20px 12px;
-  transition: transform 0.6s var(--ease-smooth);
-}
-
-.luna-sig-food-img-wrap--left {
-  right: auto;
-  left: -20px;
-  border-radius: 0 12px 12px 20px;
-}
-
-.luna-sig-card:hover .luna-sig-food-img-wrap {
-  transform: translateY(-8px) scale(1.03);
-}
-
-.luna-sig-card:hover .luna-sig-food-img-wrap--left {
-  transform: translateY(-8px) scale(1.03);
-}
-
-.luna-sig-food-img-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.luna-sig-food-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.8s var(--ease-smooth);
   display: block;
-  max-width: none;
 }
 
-.luna-sig-card:hover .luna-sig-food-img {
-  transform: scale(1.06);
+.lsm-stamp--gold .lsm-stamp-only {
+  color: var(--luna-gold);
 }
 
-/* Shimmer effect on image */
-.luna-sig-food-img-shimmer {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%);
-  transform: translateX(-100%);
-  transition: transform 0s;
+.lsm-stamp-price {
+  font-family: var(--font-sans);
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #1A120C;
+  line-height: 1;
 }
 
-.luna-sig-card:hover .luna-sig-food-img-shimmer {
-  transform: translateX(100%);
-  transition: transform 0.7s ease;
+.lsm-stamp-price sup {
+  font-size: 0.68em;
+  font-weight: 700;
+  vertical-align: super;
+  letter-spacing: 0;
 }
 
-/* ── Card hover glow ─────────────────────────────────────────────────────── */
-.luna-sig-card-hover-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  opacity: 0;
-  pointer-events: none;
-  border: 2px solid rgba(139,106,62,0.3);
-  transition: opacity 0.4s ease;
-  z-index: 5;
+.lsm-stamp--gold .lsm-stamp-price {
+  color: var(--luna-gold);
 }
 
-.luna-sig-card-hover-glow--gold {
-  border-color: rgba(201,169,110,0.4);
+.lsm-stamp-stars {
+  font-size: 0.45rem;
+  letter-spacing: 0.12em;
+  color: #8B6A3E;
+  margin-top: 2px;
+  display: block;
 }
 
-.luna-sig-card:hover .luna-sig-card-hover-glow {
-  opacity: 1;
+.lsm-stamp--gold .lsm-stamp-stars {
+  color: var(--luna-gold);
 }
 
-/* ── Footer CTA ──────────────────────────────────────────────────────────── */
-.luna-sig-footer-cta {
-  position: relative;
-  z-index: 1;
+/* ── Footer row ──────────────────────────────────────────────────────────── */
+.lsm-footer {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  margin-top: 60px;
-  padding: 0 24px;
-  text-align: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(201,169,110,0.12);
 }
 
-.luna-sig-footer-text {
+.lsm-footer-text {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--luna-muted);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
-.luna-sig-view-all {
+/* Footer link — matches luna-about-cta style */
+.lsm-footer-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--luna-gold);
   text-decoration: none;
-  padding: 14px 32px;
-  border: 1px solid rgba(201,169,110,0.35);
-  border-radius: 40px;
-  transition: background 0.3s, color 0.3s, transform 0.35s var(--ease-spring), box-shadow 0.35s;
   position: relative;
-  overflow: hidden;
+  padding-bottom: 2px;
+  transition: color 0.25s;
 }
 
-.luna-sig-view-all::before {
+.lsm-footer-link::after {
   content: '';
   position: absolute;
-  inset: 0;
+  bottom: -1px;
+  left: 0;
+  right: 100%;
+  height: 1px;
   background: var(--luna-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease-smooth);
-  z-index: -1;
+  transition: right 0.35s var(--ease-smooth);
 }
 
-.luna-sig-view-all:hover {
-  color: var(--luna-black);
-  border-color: var(--luna-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(201,169,110,0.25);
+.lsm-footer-link:hover {
+  color: var(--luna-cream);
 }
 
-.luna-sig-view-all:hover::before {
-  transform: scaleX(1);
+.lsm-footer-link:hover::after {
+  right: 0;
 }
 
-.luna-sig-view-all svg {
-  width: 14px;
-  height: 14px;
+.lsm-footer-link svg {
+  width: 15px;
+  height: 15px;
   transition: transform 0.3s var(--ease-spring);
 }
 
-.luna-sig-view-all:hover svg {
+.lsm-footer-link:hover svg {
   transform: translateX(5px);
-}
-
-/* ── Scroll-reveal animations ────────────────────────────────────────────── */
-[data-animate="fade-up"] {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
-}
-
-[data-animate="fade-up"].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-[data-animate="slide-left"] {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
-}
-
-[data-animate="slide-left"].is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-[data-animate="slide-right"] {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
-  transition-delay: 0.15s;
-}
-
-[data-animate="slide-right"].is-visible {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .luna-sig-food-img-wrap {
-    width: 260px;
-    height: 200px;
-    right: -10px;
+  .lsm-inner {
+    padding: 0 28px;
   }
 
-  .luna-sig-food-img-wrap--left {
-    left: -10px;
+  .lsm-card {
+    min-height: 190px;
   }
 
-  .luna-sig-card-content {
-    padding: 28px 20px 28px 28px;
-    min-width: 200px;
+  .lsm-card-img-wrap {
+    width: 42%;
   }
 
-  .luna-sig-stamp {
+  .lsm-stamp {
+    right: 41%;
     width: 90px;
     height: 90px;
   }
 
-  .luna-sig-stamp-price {
-    font-size: 1.2rem;
+  .lsm-stamp--gold {
+    left: 41%;
+  }
+
+  .lsm-stamp-price {
+    font-size: 1.3rem;
+  }
+
+  .lsm-card-body {
+    padding: 28px 24px 28px 32px;
+    max-width: 58%;
+    gap: 10px;
   }
 }
 
 @media (max-width: 640px) {
-  .luna-sig-section {
-    padding: 72px 0 60px;
+  .lsm-section {
+    padding: 80px 0 72px;
   }
 
-  .luna-sig-card-inner {
+  .lsm-inner {
+    padding: 0 20px;
+  }
+
+  .lsm-card {
     flex-direction: column;
     min-height: auto;
   }
 
-  .luna-sig-food-img-wrap {
+  .lsm-card-img-wrap {
     position: relative;
     width: 100%;
     height: 200px;
+    top: 0;
     right: 0;
     left: 0;
-    border-radius: 0 0 16px 16px;
-    margin-top: 0;
+    bottom: auto;
   }
 
-  .luna-sig-food-img-wrap--left {
-    order: -1;
-    border-radius: 16px 16px 0 0;
+  .lsm-card-img-fade--left,
+  .lsm-card-img-fade--right {
+    background: linear-gradient(to bottom, transparent 60%, rgba(232,217,188,1) 100%);
   }
 
-  .luna-sig-card-content {
-    padding: 24px;
+  .lsm-card--dark .lsm-card-img-fade--right {
+    background: linear-gradient(to bottom, transparent 60%, rgba(26,18,12,1) 100%);
+  }
+
+  .lsm-card-body {
+    padding: 20px 24px 28px;
     max-width: 100%;
   }
 
-  .luna-sig-card-content--right {
-    padding: 24px;
+  .lsm-card-body--right {
+    padding: 20px 24px 28px;
     margin-left: 0;
   }
 
-  .luna-sig-stamp {
+  .lsm-stamp {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 4;
-    width: 78px;
-    height: 78px;
+    top: 12px;
+    right: 12px;
+    left: auto;
+    transform: none;
+    width: 76px;
+    height: 76px;
+    z-index: 5;
   }
 
-  .luna-sig-card--dark .luna-sig-stamp {
+  .lsm-stamp--gold {
+    left: 12px;
     right: auto;
-    left: 16px;
   }
 
-  .luna-sig-card-floral {
+  .lsm-card:hover .lsm-stamp {
+    transform: rotate(14deg) scale(1.06);
+  }
+
+  .lsm-card-floral {
     display: none;
   }
 
-  .luna-sig-item-title {
-    font-size: 1.8rem;
+  .lsm-footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 }

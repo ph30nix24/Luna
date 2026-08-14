@@ -425,4 +425,124 @@
     observer.observe(statsSection);
   }
 
+
+  /* =========================================================================
+   * 8. SIGNATURE MENU — Scroll-reveal + interactions
+   * ======================================================================= */
+  function initSignatureMenu () {
+
+    /* ── Scroll-reveal for [data-animate] and .luna-sig-card ── */
+    const animatedEls = qsa('[data-animate], .luna-sig-card');
+    if (!animatedEls.length) return;
+
+    const revealObs = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    animatedEls.forEach(el => revealObs.observe(el));
+
+    /* ── Stamp tilt on mouse move ── */
+    qsa('.luna-sig-card').forEach(card => {
+      const stamp = card.querySelector('.luna-sig-stamp');
+      if (!stamp) return;
+
+      card.addEventListener('mousemove', e => {
+        const rect  = card.getBoundingClientRect();
+        const cx    = rect.left + rect.width  / 2;
+        const cy    = rect.top  + rect.height / 2;
+        const dx    = (e.clientX - cx) / (rect.width  / 2);
+        const dy    = (e.clientY - cy) / (rect.height / 2);
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+        stamp.style.transform = `rotate(${angle * 0.15 + 6}deg) scale(1.06)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        stamp.style.transform = '';
+      });
+    });
+
+    /* ── Ripple on Order Now buttons ── */
+    qsa('.luna-sig-order-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        // Remove any existing ripple
+        const old = this.querySelector('.sig-ripple');
+        if (old) old.remove();
+
+        const ripple = document.createElement('span');
+        ripple.className = 'sig-ripple';
+        const rect   = this.getBoundingClientRect();
+        const size   = Math.max(rect.width, rect.height) * 2;
+        const x      = e.clientX - rect.left - size / 2;
+        const y      = e.clientY - rect.top  - size / 2;
+
+        Object.assign(ripple.style, {
+          position:     'absolute',
+          width:        size + 'px',
+          height:       size + 'px',
+          left:         x + 'px',
+          top:          y + 'px',
+          borderRadius: '50%',
+          background:   'rgba(255,255,255,0.25)',
+          transform:    'scale(0)',
+          animation:    'sig-ripple-anim 0.55s ease-out forwards',
+          pointerEvents:'none',
+        });
+
+        // Ensure the button is positioned relative
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    /* Inject ripple keyframe once */
+    if (!document.getElementById('sig-ripple-style')) {
+      const style = document.createElement('style');
+      style.id = 'sig-ripple-style';
+      style.textContent = `
+        @keyframes sig-ripple-anim {
+          to { transform: scale(1); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    /* ── Parallax: food images shift subtly on scroll ── */
+    const section = qs('#menu');
+    if (!section) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect    = section.getBoundingClientRect();
+        const vHeight = window.innerHeight;
+        // progress: 0 (bottom of viewport) → 1 (top of viewport)
+        const progress = 1 - (rect.top / vHeight);
+
+        if (progress > 0 && progress < 2) {
+          const shift = (progress - 0.5) * 18; // ±9px range
+          qsa('.luna-sig-food-img-wrap', section).forEach(wrap => {
+            wrap.style.transform = `translateY(${-shift * 0.5}px)`;
+          });
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  /* Hook into init */
+  document.addEventListener('DOMContentLoaded', initSignatureMenu);
+
 })();
